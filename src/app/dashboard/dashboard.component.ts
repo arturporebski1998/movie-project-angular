@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
-import { MessageService } from '../message.service';
 
 @Component({
-  selector: 'app-movies',
-  templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
+export class DashboardComponent implements OnInit {
 
-export class MoviesComponent implements OnInit {
   movies: Movie[];
 
   constructor(private movieService: MovieService) { }
+
 
   ngOnInit() {
     this.getMovies();
@@ -21,6 +20,6 @@ export class MoviesComponent implements OnInit {
 
   getMovies(): void {
     this.movieService.getMovies()
-    .subscribe(movies => this.movies = movies);
+      .subscribe(movies => this.movies = movies.slice(0, 8));
   }
 }
