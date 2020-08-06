@@ -8,7 +8,7 @@ export const MOVIES: Movie[] = [
     date: 2020,
     avgRate: 7.8,
     country: "Canada / USA / UK",
-    description: 'Blablabla' },
+    description: 'Blablabla', },
 
 { id: 2,
     title: "Dunkirk",

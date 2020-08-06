@@ -1,7 +1,6 @@
 <div *ngIf="movie">
-
-    <h2>{{movie.title | uppercase}} <br >Details</h2>
-    <div><span>Movie number: </span>{{movie.id}}</div>
+    <h2>{{movie.title | uppercase}}</h2>
+    <!-- <div><span>Movie number: </span>{{movie.id}}</div> -->
     <div>
       <label>Title:
         <input [(ngModel)]="movie.title" placeholder="Title"/>
@@ -32,6 +31,7 @@
       </label>
       <br>
     </div>
+    <img class="img-responsive"  src="movie.imagePath">
     <button (click)="goBack()">go back</button>
   </div>
 
