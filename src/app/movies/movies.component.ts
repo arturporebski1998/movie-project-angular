@@ -21,7 +21,6 @@ export class MoviesComponent implements OnInit {
     this.getMovies();
   }
 
- 
 
   getMovies(): void {
     this.movieService.getMovies()
@@ -43,6 +42,5 @@ export class MoviesComponent implements OnInit {
     this.movieService.deleteMovie(movie).subscribe();
   }
 
-  
 
 }

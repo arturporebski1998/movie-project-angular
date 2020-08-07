@@ -12,6 +12,9 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import { MovieService } from './movie.service';
+import { RegistrationComponent } from './registration/registration.component';
+import { SearchDeleteComponent } from './search-delete/search-delete.component';
+import { UserRegistrationService } from './user-registration.service';
 
 @NgModule({
   imports: [
@@ -34,9 +37,11 @@ import { MovieService } from './movie.service';
     MoviesComponent,
     MovieDetailComponent,
     MessagesComponent,
-    MovieSearchComponent
+    MovieSearchComponent,
+    RegistrationComponent,
+    SearchDeleteComponent
   ],
-  providers: [ MovieService ],
+  providers: [ UserRegistrationService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
