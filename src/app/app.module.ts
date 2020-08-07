@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
+import { MovieService } from './movie.service';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { MovieSearchComponent } from './movie-search/movie-search.component';
     MessagesComponent,
     MovieSearchComponent
   ],
+  providers: [ MovieService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
