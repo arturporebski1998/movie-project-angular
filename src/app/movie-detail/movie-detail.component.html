@@ -1,5 +1,6 @@
 <div *ngIf="movie">
     <h2>{{movie.title | uppercase}}</h2>
+    
     <!-- <div><span>Movie number: </span>{{movie.id}}</div> -->
     <div>
       <label>Title:
@@ -31,8 +32,9 @@
       </label>
       <br>
     </div>
-    <img class="img-responsive"  src="movie.imagePath">
+    <!-- <img class="img-responsive"  src="movie.imagePath"> -->
     <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
   </div>
 
  

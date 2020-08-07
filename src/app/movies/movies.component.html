@@ -1,3 +1,29 @@
+<h2>Movies</h2>
+
+<div>
+  <label>Movie title:
+    <input #movieTitle />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(movieTitle.value); movieTitle.value=''">
+    add
+  </button>
+</div>
+
+
+<ul class="movies">
+  <li *ngFor="let movie of movies">
+    <a routerLink="/detail/{{movie.id}}">
+      <span class="badge">{{movie.id}}</span> {{movie.title}}
+    </a>
+    <button class="delete" title="delete movie"
+      (click)="delete(movie)">x</button>
+  </li>
+</ul>
+
+
+
+<!-- 
 <ul class="movies">
   <li *ngFor="let movie of movies">
     <a routerLink="/detail/{{movie.id}}">
@@ -5,6 +31,20 @@
     </a>
   </li>
 </ul>
+<div>
+  <label>Movie title:
+    <input #movieTitle />
+  </label>-->
 
+  <!-- (click) passes input value to add() and then clears the input -->
+  <!--
+  <button (click)="add(movieTitle.value); heroTitle.value=''">
+    add
+  </button>
+</div>
+
+<button class="delete" title="delete movie"
+  (click)="delete(movie)">x</button>
+-->
 <!-- 
 <app-movie-detail [movie]="selectedMovie"></app-movie-detail>-->
