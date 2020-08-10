@@ -20,22 +20,22 @@ export class MovieDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getMovie();
+    //this.getMovie();
   }
   
-  getMovie(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.movieService.getMovie(id)
-      .subscribe(movie => this.movie = movie);
-  }
+  // getMovie(): void {
+  //   const id = +this.route.snapshot.paramMap.get('id');
+  //   this.movieService.getMovie(id)
+  //     .subscribe(movie => this.movie = movie);
+  // }
 
   goBack(): void {
     this.location.back();
   }
 
-  save(): void {
-    this.movieService.updateMovie(this.movie)
-      .subscribe(() => this.goBack());
-  }
+  // save(): void {
+  //   this.movieService.updateMovie(this.movie)
+  //     .subscribe(() => this.goBack());
+  // }
 
 }
