@@ -8,14 +8,13 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http'
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import { MovieService } from './movie.service';
 import { RegistrationComponent } from './registration/registration.component';
 import { SearchDeleteComponent } from './search-delete/search-delete.component';
 import { UserRegistrationService } from './user-registration.service';
 import { UserListComponent } from './user-list/user-list.component';
+import { MoviesListComponent } from './movies-list/movies-list.component';
 
 @NgModule({
   imports: [
@@ -24,12 +23,6 @@ import { UserListComponent } from './user-list/user-list.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserModule,
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
 
   ],
   declarations: [
@@ -41,9 +34,10 @@ import { UserListComponent } from './user-list/user-list.component';
     MovieSearchComponent,
     RegistrationComponent,
     SearchDeleteComponent,
-    UserListComponent
+    UserListComponent,
+    MoviesListComponent
   ],
-  providers: [ UserRegistrationService ],
+  providers: [ UserRegistrationService, MovieService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

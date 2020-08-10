@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from './user';
 import { Observable } from 'rxjs';
@@ -13,11 +13,12 @@ export class UserRegistrationService {
    }
 
   public doRegistration(user: User): Observable<User> {
-    return this.http.post<User>(this.usersUrl, user);
+    return this.http.post<User>(this.usersUrl, user, {headers: new HttpHeaders().set('Content-type','application/json')});
   }
 
   public findAll(): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl);
   }
+
 
 }
