@@ -19,4 +19,10 @@ export class MoviesListComponent implements OnInit {
       this.movies = data;
     });
   }
+
+//   public deleteMovie(){
+//     this.movieService.deleteMovie().subscribe(data =>this.movies = data)
+// }
+
+
 }

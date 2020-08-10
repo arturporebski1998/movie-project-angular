@@ -16,6 +16,8 @@
         </thead>
         <tbody>
           <tr *ngFor="let movie of movies">
+            <button class="delete" title="delete movie"
+            (click)="deleteMovie()">X</button>
             <td>{{ movie.id }}</td>
             <td>{{ movie.title }}</td>
             <td>{{ movie.genre }}</td>

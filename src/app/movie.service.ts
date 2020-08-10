@@ -27,6 +27,8 @@ export class MovieService {
     return this.http.post<Movie>(this.moviesUrl, movie, {headers: new HttpHeaders().set('Content-type','application/json')});
   }
 
+ 
+
   // /** GET movies from the server */
   // getMovies(): Observable<Movie[]> {
   //   return this.http.get<Movie[]>(this.moviesUrl)
@@ -86,16 +88,13 @@ export class MovieService {
   //   );
   // }
 
-  // /** DELETE: delete the movie from the server */
-  // deleteMovie(movie: Movie | number): Observable<Movie> {
-  //   const id = typeof movie === 'number' ? movie : movie.id;
-  //   const url = `${this.moviesUrl}/${id}`;
+  /** DELETE: delete the movie from the server */
+  deleteMovie(movie: Movie | number): Observable<Movie> {
+    const id = typeof movie === 'number' ? movie : movie.id;
+    const url = `${this.moviesUrl}/${id}`;
 
-  //   return this.http.delete<Movie>(url, this.httpOptions).pipe(
-  //     tap(_ => this.log(`deleted movie id=${id}`)),
-  //     catchError(this.handleError<Movie>('deleteMovie'))
-  //   );
-  // }
+    return this.http.delete<Movie>(url, this.httpOptions);
+  }
 
   // /** PUT: update the movie on the server */
   // updateMovie(movie: Movie): Observable<any> {

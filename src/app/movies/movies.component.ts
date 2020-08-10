@@ -34,7 +34,8 @@ export class MoviesComponent implements OnInit {
     public saveMovie() {
       let response = this.movieService.saveMovie(this.movie).subscribe((data) => this.message = data);
     }
-  
+
+   
 
   ngOnInit() {
     //this.getMovies();
