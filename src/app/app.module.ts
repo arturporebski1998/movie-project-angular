@@ -15,6 +15,7 @@ import { MovieService } from './movie.service';
 import { RegistrationComponent } from './registration/registration.component';
 import { SearchDeleteComponent } from './search-delete/search-delete.component';
 import { UserRegistrationService } from './user-registration.service';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import { UserRegistrationService } from './user-registration.service';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-
+    BrowserModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -39,7 +40,8 @@ import { UserRegistrationService } from './user-registration.service';
     MessagesComponent,
     MovieSearchComponent,
     RegistrationComponent,
-    SearchDeleteComponent
+    SearchDeleteComponent,
+    UserListComponent
   ],
   providers: [ UserRegistrationService ],
   bootstrap: [ AppComponent ]

@@ -3,14 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { MoviesComponent } from './movies/movies.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: MovieDetailComponent },
   { path: 'movies', component: MoviesComponent },
-  { path: 'add', component: MoviesComponent},
-  { path: 'search', component: MoviesComponent}
+  { path: 'users', component: RegistrationComponent},
+  { path: 'adduser', component: RegistrationComponent }
 ];
 
 @NgModule({
