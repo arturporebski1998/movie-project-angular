@@ -1,3 +1,5 @@
+
+
 <div style="text-align: center">
   <h2>Movies panel</h2>
 </div>
@@ -59,6 +61,7 @@
                       <input class="btn btn-success" type="submit" name="submit_reg" value="Submit" (click)="saveMovie()">
                   </div>
 
+
               </fieldset>
           </form><!-- ends register form -->
           <!-- second for to fiter user-->
@@ -67,13 +70,45 @@
   </div>
 </div>
 <br><br>
+
 <app-movies-list></app-movies-list>
+
+
+
+<!-- 
+
+<h2>My Movies</h2>
+<ul class="movies">
+  <li *ngFor="let movie of movies"
+    [class.selected]="movie === selectedMovie"
+    (click)="onSelect(movie)">
+    <span class="badge">{{movie.id}}</span> {{movie.title}}
+  </li>
+</ul>
+
+
+<app-movie-detail [movie]="selectedMovie"></app-movie-detail>
+
+-->
+
+
+
+
+
+
+
+
+
 
 <!--
 <div>
   <label>Movie title:
     <input #movieTitle />
   </label>
+
+
+
+
 
   -->
 
@@ -134,3 +169,17 @@
 -->
 <!-- 
 <app-movie-detail [movie]="selectedMovie"></app-movie-detail>-->
+
+
+<!--
+<h2>My Films</h2>
+<ul class="films">
+  <li *ngFor="let film of films"
+    [class.selected]="film === selectedFilm"
+    (click)="onSelect(film)">
+    <span class="badge">{{film.id}}</span> {{film.title}}
+  </li>
+</ul>
+
+<app-movie-detail [film]="selectedFilm"></app-movie-detail> -->
+

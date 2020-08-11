@@ -8,21 +8,26 @@ import { MovieService } from '../movie.service';
   styleUrls: ['./movies-list.component.css']
 })
 export class MoviesListComponent implements OnInit {
-
   movies: Movie[];
 
   constructor(private movieService: MovieService) {
   }
 
   ngOnInit() {
-    this.movieService.findAll().subscribe(data => {
+    this.movieService.getMovies().subscribe(data => {
       this.movies = data;
     });
+    
   }
 
-//   public deleteMovie(){
-//     this.movieService.deleteMovie().subscribe(data =>this.movies = data)
-// }
+  deleteMovie(movie: Movie): void {
+    this.movieService.deleteMovie(movie).subscribe();
+  }
+
+
+  update(movie: Movie): void {
+    this.movieService.updateMovie(movie).subscribe();
+  }
 
 
 }
