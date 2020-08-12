@@ -1,8 +1,11 @@
+<body >
 <h1 style="font-size: 30px">{{title | uppercase}}</h1>
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/movies">Movies</a>
-  <!-- <a routerLink="/users">Registration</a> -->
-</nav>
+
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+  <mat-button-toggle routerLink="/dashboard" value="bold">Dashboard</mat-button-toggle>
+  <mat-button-toggle routerLink="/movies" value="italic">Movies</mat-button-toggle>
+</mat-button-toggle-group>
+
 <router-outlet></router-outlet>
 <app-messages></app-messages>
+</body>

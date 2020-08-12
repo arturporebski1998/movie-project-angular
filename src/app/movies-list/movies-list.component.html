@@ -1,43 +1,26 @@
-<!-- 
-<h2>List of movies</h2>
-<div class="card my-5">
-    <div class="card-body">
-      <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Genre</th>
-            <th scope="col">Director</th>
-            <th scope="col">Date</th>
-            <th scope="col">Rate</th>
-            <th scope="col">Country</th>
-            <th scope="col">Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let movie of movies">
 
-            <button class="btn btn danger"
-            (click)="deleteMovie(movie)">X</button>
-             <td>{{ movie.id }}</td> 
-            <td>{{ movie.title }}</td>
-            <td>{{ movie.genre }}</td>
-            <td>{{ movie.director }}</td>
-            <td>{{ movie.date }}</td>
-            <td>{{ movie.avgRate }}</td>
-            <td>{{ movie.country }}</td>
-            <td>{{ movie.description }}</td>
-            <button class="btn btn danger"
-            (click)="updateMovie(movie)">update</button>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div> 
--->
+    <h1>List of movies</h1>
+    <ul class="movies">
+      <li *ngFor="let movie of movies"
+        [class.selected]="movie === selectedMovie"
+        (click)="onSelect(movie)">
+        <div style="text-align:center">{{movie.title}}</div> 
+      </li>
+    </ul>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+      <mat-button-toggle routerLink="/movies/add" value="bold">Add New Movie</mat-button-toggle>
+    </mat-button-toggle-group>
+    <app-movie-detail [movie]="selectedMovie"></app-movie-detail>
 
-  <h2>List of movies</h2>
+
+    <mat-list role="list">
+      <mat-list-item role="listitem">Item 1</mat-list-item>
+      <mat-list-item role="listitem">Item 2</mat-list-item>
+      <mat-list-item role="listitem">Item 3</mat-list-item>
+    </mat-list>
+
+    <!-- 
+<h1>List of movies</h1>
 <div class="card my-5">
     <div class="card-body">
       <table class="table table-bordered table-striped">
@@ -48,7 +31,6 @@
             <th scope="col">Title</th>
             <th scope="col">Genre</th>
             <th scope="col">Director</th>
-            <th scope="col">Date</th>
             <th scope="col">Rate</th>
             <th scope="col">Country</th>
             <th scope="col">Description</th>
@@ -72,9 +54,6 @@
               <input [(ngModel)]="movie.director" placeholder="Director"/>
             </td>
             <td>
-              <input [(ngModel)]="movie.date" placeholder="Date"/>
-            </td>
-            <td>
               <input [(ngModel)]="movie.avgRate" placeholder="Rate"/>
             </td>
             <td>
@@ -90,7 +69,11 @@
       </table>
     </div>
   </div>
+  <nav>
+    <a routerLink="/movies/add">Add New Movie</a>
+    </nav>
 
+    -->
  
 
   

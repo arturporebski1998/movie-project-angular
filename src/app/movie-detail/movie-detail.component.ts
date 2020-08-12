@@ -3,6 +3,7 @@ import { Movie } from '../movie';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { MovieService } from '../movie.service';
+import { MoviesListComponent } from '../movies-list/movies-list.component';
 
 @Component({
   selector: 'app-movie-detail',
@@ -12,25 +13,25 @@ import { MovieService } from '../movie.service';
 export class MovieDetailComponent implements OnInit {
   
   @Input() movie: Movie;
-  constructor() {}
+  constructor(
+    private moviesList: MoviesListComponent
+  ) {}
 
   ngOnInit(): void {
-    //this.getMovie();
+    //this.moviesList.reloadMovies();
+  }
+
+  updateMovie(movie: Movie): void {
+    this.moviesList.update(movie);
+  }
+
+  deleteMovie(movie: Movie): void {
+    this.moviesList.deleteMovie(movie);
   }
   
-  // getMovie(): void {
-  //   const id = +this.route.snapshot.paramMap.get('id');
-  //   this.movieService.getMovie(id)
-  //     .subscribe(movie => this.movie = movie);
-  // }
-
   // goBack(): void {
   //   this.location.back();
   // }
 
-  // save(): void {
-  //   this.movieService.updateMovie(this.movie)
-  //     .subscribe(() => this.goBack());
-  // }
 
 }

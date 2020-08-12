@@ -42,7 +42,7 @@ export class MovieService {
   /** PUT: update the movie on the server */
   updateMovie(movie: Movie): Observable<Movie> {
     const url = `${this.moviesUrl}/${movie.id}`;
-    return this.http.put<Movie>(url, this.httpOptions);
+    return this.http.put<Movie>(url, movie, this.httpOptions);
   }
 
 

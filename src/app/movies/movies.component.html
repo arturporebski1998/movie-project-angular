@@ -1,78 +1,4 @@
-
-
-<div style="text-align: center">
-  <h2>Movies panel</h2>
-</div>
-
-<div class="container">
-  <div class="row">
-      <div class="col-md-6">
-          <form>
-              <fieldset>
-                  
-
-                  <div class="form-group">
-                      <label for="Title"><span class="req">* </span> Title: </label>
-                      <input required type="text" [(ngModel)]="movie.title" name="title" id="title"
-                          class="form-control phone" maxlength="28" placeholder="Enter movie title..." />
-                  </div>
-
-                  <div class="form-group">
-                      <label for="Genre"><span class="req">* </span> Genre: </label>
-                      <input class="form-control" type="text" [(ngModel)]="movie.genre" name="genre" id="txt" required
-                          placeholder="Enter movie genre..." />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="Director"><span class="req">* </span> Director: </label>
-                    <input class="form-control" type="text" [(ngModel)]="movie.director" name="director" id="txt" required
-                        placeholder="Enter movie director..." />
-                </div>
-
-                  <div class="form-group">
-                      <label for="Date"><span class="req">* </span> Date : </label>
-                      <input class="form-control" type="text" [(ngModel)]="movie.date" name="date" id="txt"
-                          placeholder="Enter the movie relase date..." required />
-                      <div id="errLast"></div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="Rate"><span class="req">* </span> Rate : </label>
-                    <input class="form-control" type="text" [(ngModel)]="movie.avgRate" name="avgRate" id="txt"
-                        placeholder="Enter the movie average rate..." required />
-                    <div id="errLast"></div>
-                </div>
-
-                  <div class="form-group">
-                    <label for="Country"><span class="req">* </span> Country: </label>
-                    <input class="form-control" type="text" [(ngModel)]="movie.country" name="country" id="txt" required
-                        placeholder="Enter movie origin country..." />
-                </div>
-
-
-                <div class="form-group">
-                  <label for="Description"><span class="req">* </span> Description: </label>
-                  <input class="form-control" type="text" [(ngModel)]="movie.description" name="description" id="txt" required
-                      placeholder="Enter short movie description..." />
-              </div>
-
-                <br>
-                  <div class="form-group">
-                      <input class="btn btn-success" type="submit" name="submit_reg" value="Submit" (click)="saveMovie()">
-                  </div>
-
-
-              </fieldset>
-          </form><!-- ends register form -->
-          <!-- second for to fiter user-->
-      </div><!-- ends col-6 -->
-
-  </div>
-</div>
-<br><br>
-
-<app-movies-list></app-movies-list>
-
+<app-movies-list></app-movies-list> 
 
 
 <!-- 
@@ -90,11 +16,6 @@
 <app-movie-detail [movie]="selectedMovie"></app-movie-detail>
 
 -->
-
-
-
-
-
 
 
 
