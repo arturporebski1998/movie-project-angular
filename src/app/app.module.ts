@@ -15,6 +15,10 @@ import { SearchDeleteComponent } from './search-delete/search-delete.component';
 import { UserRegistrationService } from './user-registration.service';
 import { UserListComponent } from './user-list/user-list.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
+import { MovieAddComponent } from './movie-add/movie-add.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+
 
 @NgModule({
   imports: [
@@ -23,6 +27,9 @@ import { MoviesListComponent } from './movies-list/movies-list.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule
+
 
   ],
   declarations: [
@@ -35,9 +42,10 @@ import { MoviesListComponent } from './movies-list/movies-list.component';
     RegistrationComponent,
     SearchDeleteComponent,
     UserListComponent,
-    MoviesListComponent
+    MoviesListComponent,
+    MovieAddComponent
   ],
-  providers: [ UserRegistrationService, MovieService ],
+  providers: [ MovieService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

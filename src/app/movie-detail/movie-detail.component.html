@@ -1,38 +1,57 @@
 <div *ngIf="movie">
-    <h2>{{movie.title | uppercase}}</h2>
+    <h1>{{movie.title}}</h1>
     
     <!-- <div><span>Movie number: </span>{{movie.id}}</div> -->
     <div>
-      <label>Title:
-        <input [(ngModel)]="movie.title" placeholder="Title"/>
-      </label>
+        <mat-form-field style="width:22vw">
+          <input matInput [(ngModel)]="movie.title" name="title" id="title">
+          <mat-placeholder class="placeholder">You can update movie title</mat-placeholder>
+        </mat-form-field>
       <br>
-      <label>Genre:
-        <input [(ngModel)]="movie.genre" placeholder="Genre"/>
-      </label>
+      <mat-form-field style="width:22vw">
+        <mat-placeholder class="placeholder">You can update movie genre</mat-placeholder>
+        <mat-select [(ngModel)]="movie.genre" name="genre">
+          <mat-option *ngFor="let genre of genres" [value]="genre.value" >
+            {{genre.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
       <br>
-      <label>Director:
-        <input [(ngModel)]="movie.director" placeholder="Director"/>
-      </label>
+        <mat-form-field style="width:22vw">
+          <input matInput [(ngModel)]="movie.director" name="director" id="director">
+          <mat-placeholder class="placeholder">You can update movie director</mat-placeholder>
+        </mat-form-field>
       <br>
-      <label>Date:
-        <input [(ngModel)]="movie.date" placeholder="Date"/>
-      </label>
+        <mat-form-field style="width:22vw">
+          <input matInput [(ngModel)]="movie.avgRate" name="rate" id="rate">
+          <mat-placeholder class="placeholder">You can update movie average rate</mat-placeholder>
+        </mat-form-field>
       <br>
-      <label>Rate:
-        <input [(ngModel)]="movie.avgRate" placeholder="Rate"/>
-      </label>
+        <mat-form-field style="width:22vw">
+          <input matInput [(ngModel)]="movie.country" name="country" id="country">
+          <mat-placeholder class="placeholder">You can update movie origin country </mat-placeholder>
+        </mat-form-field>
       <br>
-      <label>Country:
-        <input [(ngModel)]="movie.country" placeholder="Country"/>
-      </label>
-      <br>
-      <label>Description:
-        <input [(ngModel)]="movie.description" placeholder="Description"/>
-      </label>
-      <br>
+        <mat-form-field style="width:22vw">
+          <input matInput [(ngModel)]="movie.description" name="description" id="description">
+          <mat-placeholder class="placeholder">You can update movie description</mat-placeholder>
+        </mat-form-field>
+      <br><br>
+      <button mat-raised-button color="primary" class="delete" title="delete movie"
+          (click)="deleteMovie(movie)">Delete Movie
+        </button>
+      <button mat-raised-button color="primary" class="btn btn submit"
+          (click)="updateMovie(movie)">Update Movie
+        </button>
     </div>
 
+
+
+
+
+
+<!--     
+    
     
     <p *ngIf="movie.title=='Tenet'">  
       <br>
@@ -74,8 +93,6 @@
       <img class="img-responsive"  src="assets\img\batman.jpg" width="300"> 
   </p>  
 
-    <button (click)="goBack()">go back</button>
-    <button (click)="save()">save</button>
-  </div>
+  </div> 
 
- 
+  -->

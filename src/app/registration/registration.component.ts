@@ -23,7 +23,7 @@ export class RegistrationComponent implements OnInit {
    ngOnInit() {};
     
   
-   onSubmit() {
+  onSubmit() {
     this.userService.doRegistration(this.user).subscribe(result => this.gotoUserList());
   }
  
@@ -31,8 +31,8 @@ export class RegistrationComponent implements OnInit {
     this.router.navigate(['/users']);
   }
 
-  public saveUser() {
-    let response = this.userService.doRegistration(this.user).subscribe((data) => this.message = data);
+  saveUser(): void {
+    this.userService.doRegistration(this.user).subscribe((data) => this.message = data);
   }
 
 
