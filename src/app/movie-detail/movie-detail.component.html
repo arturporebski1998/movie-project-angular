@@ -1,60 +1,56 @@
 <div *ngIf="movie">
-    <h2>{{movie.title}}</h2>
+    <h1>{{movie.title}}</h1>
     
     <!-- <div><span>Movie number: </span>{{movie.id}}</div> -->
     <div>
-      <label>Title:
-        <mat-form-field class="example-full-width">
-          <textarea matInput [(ngModel)]="movie.title" name="title" id="title"
-          class="form-control phone" maxlength="28" placeholder="Enter movie title"></textarea>
+        <mat-form-field style="width:22vw">
+          <input matInput [(ngModel)]="movie.title" name="title" id="title">
+          <mat-placeholder class="placeholder">You can update movie title</mat-placeholder>
         </mat-form-field>
-      </label>
       <br>
-      <label>Genre:
-        <mat-form-field class="example-full-width">
-          <textarea matInput [(ngModel)]="movie.genre" name="genre" id="genre"
-          class="form-control phone" maxlength="28" placeholder="Enter movie genre"></textarea>
-        </mat-form-field>
-      </label>
+      <mat-form-field style="width:22vw">
+        <mat-placeholder class="placeholder">You can update movie genre</mat-placeholder>
+        <mat-select [(ngModel)]="movie.genre" name="genre">
+          <mat-option *ngFor="let genre of genres" [value]="genre.value" >
+            {{genre.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
       <br>
-      <label>Director:
-        <mat-form-field class="example-full-width">
-          <textarea matInput [(ngModel)]="movie.director" name="director" id="director"
-          class="form-control phone" maxlength="28" placeholder="Enter movie director"></textarea>
+        <mat-form-field style="width:22vw">
+          <input matInput [(ngModel)]="movie.director" name="director" id="director">
+          <mat-placeholder class="placeholder">You can update movie director</mat-placeholder>
         </mat-form-field>
-      </label>
       <br>
-      <label>Rate:
-        <mat-form-field class="example-full-width">
-          <textarea matInput [(ngModel)]="movie.avgRate" name="rate" id="rate"
-          class="form-control phone" maxlength="28" placeholder="Enter movie rate"></textarea>
+        <mat-form-field style="width:22vw">
+          <input matInput [(ngModel)]="movie.avgRate" name="rate" id="rate">
+          <mat-placeholder class="placeholder">You can update movie average rate</mat-placeholder>
         </mat-form-field>
-      </label>
       <br>
-      <label>Country:
-        <mat-form-field class="example-full-width">
-          <textarea matInput [(ngModel)]="movie.country" name="country" id="country"
-          class="form-control phone" maxlength="28" placeholder="Enter movie country"></textarea>
+        <mat-form-field style="width:22vw">
+          <input matInput [(ngModel)]="movie.country" name="country" id="country">
+          <mat-placeholder class="placeholder">You can update movie origin country </mat-placeholder>
         </mat-form-field>
-      </label>
       <br>
-      <label>Description:
-        <mat-form-field class="example-full-width">
-          <textarea matInput [(ngModel)]="movie.description" name="description" id="description"
-          class="form-control phone" maxlength="28" placeholder="Enter movie description"></textarea>
+        <mat-form-field style="width:22vw">
+          <input matInput [(ngModel)]="movie.description" name="description" id="description">
+          <mat-placeholder class="placeholder">You can update movie description</mat-placeholder>
         </mat-form-field>
-      </label>
       <br><br>
-      <button class="delete" title="delete movie"
+      <button mat-raised-button color="primary" class="delete" title="delete movie"
           (click)="deleteMovie(movie)">Delete Movie
         </button>
-      <button class="btn btn submit"
+      <button mat-raised-button color="primary" class="btn btn submit"
           (click)="updateMovie(movie)">Update Movie
         </button>
     </div>
 
-    
-    
+
+
+
+
+
+<!--     
     
     
     <p *ngIf="movie.title=='Tenet'">  
@@ -99,4 +95,4 @@
 
   </div> 
 
- 
+  -->

@@ -10,10 +10,9 @@ import { MovieAddComponent } from './movie-add/movie-add.component';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'detail/:id', component: MovieDetailComponent },
   { path: 'movies', component: MoviesComponent },
-  //{ path: 'users', component: RegistrationComponent},
   { path: 'movies/add', component: MovieAddComponent },
+  { path: 'details', component: MovieDetailComponent }
 ];
 
 @NgModule({

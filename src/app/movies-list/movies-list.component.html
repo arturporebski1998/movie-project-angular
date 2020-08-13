@@ -1,26 +1,29 @@
 
     <h1>List of movies</h1>
     <ul class="movies">
+      
       <li *ngFor="let movie of movies"
+        routerLink="/details"
         [class.selected]="movie === selectedMovie"
         (click)="onSelect(movie)">
-        <div style="text-align:center">{{movie.title}}</div> 
+        
+        <div style="text-align:center">{{movie.title}}</div>
       </li>
-    </ul>
-    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-      <mat-button-toggle routerLink="/movies/add" value="bold">Add New Movie</mat-button-toggle>
-    </mat-button-toggle-group>
+    </ul> 
+
+    <!-- <ul class="movies">
+      <li *ngFor="let movie of movies">
+        <a routerLink="/detail/{{movie.id}}">
+          <span class="badge">{{movie.id}}</span> {{movie.title}}
+        </a>
+      </li>
+    </ul> -->
+
+    <button mat-raised-button routerLink="/movies/add" color="primary" >Add New Movie</button>
+    <button mat-raised-button routerLink="/details" color="primary" >Details</button>
     <app-movie-detail [movie]="selectedMovie"></app-movie-detail>
 
-
-    <mat-list role="list">
-      <mat-list-item
-       role="listitem">Item 1
-      </mat-list-item>
-      <mat-list-item role="listitem">Item 2</mat-list-item>
-      <mat-list-item role="listitem">Item 3</mat-list-item>
-    </mat-list>
-
+    
     <!-- 
 <h1>List of movies</h1>
 <div class="card my-5">

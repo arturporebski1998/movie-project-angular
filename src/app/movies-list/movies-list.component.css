@@ -72,3 +72,11 @@
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
+
+  .mat-selection-list {
+    color: #000000;
+  }
+  
+  .mat-focused .placeholder {
+    color: rgb(85, 2, 85);
+  }

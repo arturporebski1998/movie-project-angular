@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Movie } from '../movie';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MovieService } from '../movie.service';
+import { MoviesListComponent } from '../movies-list/movies-list.component';
 
 interface Genre {
   value: string;
@@ -17,22 +18,20 @@ interface Genre {
 export class MovieAddComponent implements OnInit {
 
   movie: Movie = new Movie(0,'','','',0,'','');
-  selectedValue: string;
 
   genres: Genre[] = [
-    {value: 'action-1', viewValue: 'Action'},
-    {value: 'adventure-2', viewValue: 'Adventure'},
-    {value: 'comedy-3', viewValue: 'Comedy'},
-    {value: 'fantasy-4', viewValue: 'Fantasy'},
-    {value: 'horror-5', viewValue: 'Horror'},
-    {value: 'mystery-6', viewValue: 'Mystery'},
-    {value: 'romance-7', viewValue: 'Romance'},
-    {value: 'thriller-8', viewValue: 'Thriller'},
-    {value: 'western-9', viewValue: 'Western'},
-    {value: 'scifi-10', viewValue: 'Sci-Fi'},
-    {value: 'history-11', viewValue: 'History'}
+    {value: 'Action', viewValue: 'Action'},
+    {value: 'Adventure', viewValue: 'Adventure'},
+    {value: 'Comedy', viewValue: 'Comedy'},
+    {value: 'Fantasy', viewValue: 'Fantasy'},
+    {value: 'Horror', viewValue: 'Horror'},
+    {value: 'Mystery', viewValue: 'Mystery'},
+    {value: 'Romance', viewValue: 'Romance'},
+    {value: 'Thriller', viewValue: 'Thriller'},
+    {value: 'Western', viewValue: 'Western'},
+    {value: 'Scifi', viewValue: 'Sci-Fi'},
+    {value: 'History', viewValue: 'History'}
   ];
-
 
   constructor(
     private route: ActivatedRoute, 

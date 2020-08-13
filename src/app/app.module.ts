@@ -17,11 +17,8 @@ import { UserListComponent } from './user-list/user-list.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
 import { MovieAddComponent } from './movie-add/movie-add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
-import {MatListModule} from '@angular/material/list'
+import { MaterialModule } from './material/material.module';
+
 
 @NgModule({
   imports: [
@@ -31,11 +28,8 @@ import {MatListModule} from '@angular/material/list'
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonToggleModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatListModule
+    MaterialModule
+
 
   ],
   declarations: [
@@ -51,7 +45,7 @@ import {MatListModule} from '@angular/material/list'
     MoviesListComponent,
     MovieAddComponent
   ],
-  providers: [ UserRegistrationService, MovieService ],
+  providers: [ MovieService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

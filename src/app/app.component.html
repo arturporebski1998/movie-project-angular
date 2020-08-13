@@ -1,11 +1,12 @@
-<body >
-<h1 style="font-size: 30px">{{title | uppercase}}</h1>
 
-<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-  <mat-button-toggle routerLink="/dashboard" value="bold">Dashboard</mat-button-toggle>
-  <mat-button-toggle routerLink="/movies" value="italic">Movies</mat-button-toggle>
-</mat-button-toggle-group>
-
+<mat-toolbar color="primary">
+  <div ><h1>{{title | uppercase}}</h1></div>
+</mat-toolbar><br>
+<body>
+  <button mat-raised-button routerLink="/dashboard" color="primary" >Dashboard</button>
+  <button mat-raised-button routerLink="/movies" color="primary">Movies</button>
+  <button mat-raised-button routerLink="/users" color="primary">Users</button>
+  
 <router-outlet></router-outlet>
 <app-messages></app-messages>
 </body>

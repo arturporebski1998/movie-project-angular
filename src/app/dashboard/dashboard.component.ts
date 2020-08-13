@@ -15,11 +15,11 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit() {
-    //this.getMovies();
+    this.getMovies();
   }
 
-  // getMovies(): void {
-  //   this.movieService.getMovies()
-  //     .subscribe(movies => this.movies = movies.slice(0, 8));
-  // }
+  getMovies(): void {
+    this.movieService.getMovies()
+      .subscribe(movies => this.movies = movies);
+  }
 }

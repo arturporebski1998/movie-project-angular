@@ -8,12 +8,7 @@
     width: 100%;
   }
 
-.example-button-row button,
-.example-button-row a {
-  margin-right: 8px;
-}
-
-::ng-deep .mat-focused .mat-form-field-label {
+  ::ng-deep .mat-focused .mat-form-field-label {
     /*change color of label*/
     color: black !important;
    }
@@ -27,3 +22,20 @@
    /*change color of underline when focused*/
    background-color: black !important;
   }
+  
+  .mat-form-field .placeholder {
+    color: #000000;
+}
+
+  .mat-focused .placeholder {
+    color: rgb(85, 2, 85);
+}
+
+
+
+
+
+  
+
+
+  
